@@ -1,0 +1,245 @@
+:root {
+  --primary-color: #2e7d32;     
+  --primary-dark: #1b5e20;      
+  --bg-body: #f4f7f6;           
+  --bg-card: #ffffff;           
+  --text-main: #333333;         
+  --text-muted: #666666;        
+  --border-light: #e0e0e0;      
+  --shadow: 0 8px 24px rgba(0,0,0,0.08); 
+  --radius: 8px;                
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (min-width: 1024px) {
+  main {
+      grid-template-columns: 400px 1fr;
+  }
+}
+
+fieldset {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
+
+legend {
+  padding: 0 0.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group:has(label[for="precoSmartClean"]),
+.input-group:has(label[for="valorColhedora"]) {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--text-muted);
+}
+
+input[type="number"] {
+  padding: 0.6rem;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.results-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+}
+
+h3 {
+  font-size: 1.1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-main);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+}
+
+th, td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+th {
+  background-color: #fafafa;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+tbody tr:hover {
+  background-color: #f1f8f2;
+}
+
+.total-row {
+  background-color: #e8f5e9;
+  font-weight: bold;
+}
+
+.total-row td {
+  border-bottom: none;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.cards-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card span {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.card strong {
+  font-size: 1.4rem;
+}
+
+.card.destaque {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.card.destaque span {
+  color: #e8f5e9;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border-light);
+}
+
+footer p { margin: 0; }
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
