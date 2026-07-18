@@ -108,6 +108,8 @@ input[type="number"] {
   font-size: 1rem;
   transition: all 0.3s ease;
   width: 100%;
+  background-color: #ffffff; 
+  color: var(--text-main); 
 }
 
 input[type="number"]:focus {
@@ -195,6 +197,7 @@ tbody tr:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center; 
 }
 
 .card span {
@@ -207,6 +210,7 @@ tbody tr:hover {
 
 .card strong {
   font-size: 1.4rem;
+  white-space: nowrap;
 }
 
 .card.destaque {

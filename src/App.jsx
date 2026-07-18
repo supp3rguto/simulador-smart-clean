@@ -316,7 +316,7 @@ function App() {
 
       <footer>
         <p>
-          Desenvolvido por <a href="https://www.linkedin.com/oaugustobarbosa" target="_blank" rel="noreferrer">Augusto Barbosa | 2026</a>
+          Desenvolvido por <a href="https://www.linkedin.com/in/oaugustobarbosa/" target="_blank" rel="noreferrer">Augusto Barbosa</a> | 2026
         </p>
       </footer>
     </div>
