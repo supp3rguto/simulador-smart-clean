@@ -83,11 +83,6 @@ legend {
   flex-direction: column;
 }
 
-.input-group:has(label[for="precoSmartClean"]),
-.input-group:has(label[for="valorColhedora"]) {
-  grid-column: 1 / -1;
-}
-
 label {
   font-size: 0.85rem;
   font-weight: 500;
@@ -95,9 +90,9 @@ label {
   color: var(--text-muted);
 }
 
-input[type="number"] {
+input[type="number"]:not(:disabled) {
   padding: 0.6rem;
-  border: 1px solid var(--border-light);
+  border: 2px solid #a5d6a7; 
   border-radius: 4px;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -106,10 +101,22 @@ input[type="number"] {
   color: var(--text-main); 
 }
 
-input[type="number"]:focus {
+input[type="number"]:not(:disabled):focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+input[type="number"]:disabled, input[type="text"]:disabled {
+  padding: 0.6rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #e0e0e0;
+  color: #757575; 
+  cursor: not-allowed;
+  font-weight: 600;
 }
 
 .results-section h2 {
@@ -229,45 +236,21 @@ footer {
 }
 
 footer p { margin: 0; }
-
-footer a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: var(--primary-dark);
-  text-decoration: underline;
-}
+footer a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+footer a:hover { color: var(--primary-dark); text-decoration: underline; }
 
 @media (max-width: 768px) {
-  body {
-    padding: 0.5rem;
-  }
-  main {
-    padding: 1rem;
-  }
-  header {
-    padding: 1.5rem 1rem;
-  }
-  header h1 {
-    font-size: 1.4rem;
-  }
-  fieldset {
-    padding: 1rem;
-  }
+  body { padding: 0.5rem; }
+  main { padding: 1rem; }
+  header { padding: 1.5rem 1rem; }
+  header h1 { font-size: 1.4rem; }
+  fieldset { padding: 1rem; }
 }
 
 @media (min-width: 600px) {
-  .input-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .input-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 1024px) {
-  main {
-    grid-template-columns: 400px 1fr;
-  }
+  main { grid-template-columns: 450px 1fr; }
 }
